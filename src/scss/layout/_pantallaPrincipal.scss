@@ -1,0 +1,30 @@
+.contenedorPrincipal{
+    background-color: blue;
+    
+    min-height: 20rem;
+    
+
+    padding: 1rem;
+
+}
+
+.bg1{
+    background-color: green;
+    
+
+}
+.bg2{
+    background-color: gray;
+}
+.recuadroPrincipal{
+    min-height: 20rem;
+}
+.recuadroSecundario{
+    aspect-ratio: 1/1;
+    min-height: 8rem;
+    height: auto;
+}
+.recuadroPrincipal, .recuadroSecundario{
+    border-radius: 1rem;
+    padding: 1rem;
+}

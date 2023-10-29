@@ -1,0 +1,33 @@
+
+@use 'variables' as v;
+
+
+html {
+    
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+body {
+    font-family: v.$fuente_principal ;
+   
+}
+p {
+    color: v.$negro;
+   
+}
+
+a {
+    text-decoration: none;
+    margin: 0;
+}
+
+img,
+picture {
+    width: 100%;
+    display: block;
+}
+
+
+
