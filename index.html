@@ -26,8 +26,7 @@
           <div class="bg1 recuadroPrincipal contenedorClima">
      
             <div class="contenedorClima__hora">
-              10:07
-      
+              Cargando
             </div>
             <div class="contenedorClima__clima">
               Cargando 
@@ -138,7 +137,7 @@
 
         </div>
 
-        <div class="col-3  ">
+        <div class="col-3  " id="carouselImagenes">
           <div class="recuadroSecundario">
             <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
               <div class="carousel-inner w-100">
@@ -172,9 +171,9 @@
             </div>
           </div>
         </div>
-        <div class="col-3  ">
+        <div class="col-3  " id="carouselVideos">
           <div class="recuadroSecundario contenedorVideo">
-            <iframe class="videoYoutube" src="https://www.youtube.com/embed/nzWVx1Vxq3g?si=C4r_j01Kgrc2YPmD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            <iframe id="videoYoutube" class="videoYoutube" src="https://www.youtube.com/embed/nzWVx1Vxq3g?si=C4r_j01Kgrc2YPmD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen muted></iframe>
             <!-- videoYoutube -->
           </div>
           
@@ -184,10 +183,10 @@
             <a href="https://open.spotify.com/intl-es"><i class="bi bi-spotify"></i></a>
           </div>
         </div>
-        <div class="col-3  ">
+        <div class="col-3  " id="recetasGuardadas">
           <div class=" recuadroSecundario recuadroNotas">
             <button type="button" class="resetBtn titulo" data-bs-toggle="modal" data-bs-target="#modalNotasGuardadas">
-              Ver Recetas Guardadas
+              Ver Recetas Guardadas 
             </button>
             
             <!-- Modal -->
@@ -195,11 +194,65 @@
               <div class="modal-dialog">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="modalNotasGuardadasLabel">Modal title</h5>
+                    <h5 class="modal-title" id="modalNotasGuardadasLabel">Recetas <i class="bi bi-card-text"></i></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                   </div>
                   <div class="modal-body">
-                    ...
+                    <!-- inicio acordeón -->
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                            Accordion Item #1
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            Accordion Item #2
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            Accordion Item #3
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                          </div>
+                        </div>
+                      </div>
+                      
+                    </div>
+
+                    <!-- fin acordeón -->
+
                   </div>
                   <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
