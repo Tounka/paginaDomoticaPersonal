@@ -5,50 +5,72 @@ document.addEventListener('DOMContentLoaded', function(){
 });
 
 
-// function eventListeners(){
+ function eventListeners(){
+    setInterval(reloj, 1000); //cada segundo llama a la funcion reloj
+    tiempo();
     
-//     btnCalcular.addEventListener("click", calcularOperacion);
-//     disponibilidadSolar.addEventListener("input", actualizarlblRange)
 
-// }
-// function actualizarlblRange(){
-//     let x = parseFloat(inpDisponibilidadSolar.value);
-    
-//     let mensajeRange = "";
-//     console.log(x)
-//     switch(x){
-//         case 0:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado todo el dia";
-        
-            
-//             break;
-//         case 0.5:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado 10 horas, dejando solo 2 de luz ";
-//             break;    
+ }
+function reloj(){
+    const tiempoActual = new Date();
+    const horas = tiempoActual.getHours().toString().padStart(2, '0');
+    const minutos = tiempoActual.getMinutes().toString().padStart(2, '0');
+    const tiempo = horas + ":" +minutos;
 
-//         case 1:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado 8 horas del día, dejando solo 4 de luz";
-//             break;    
-//         case 1.5:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado 6 horas del día, dejando 6 de luz";
-        
-            
-//             break;
-//         case 2:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado 4 horas del día, dejando 8 de luz";
-//             break;    
+    console.log(tiempo);
 
-//         case 2.5:
-//             mensajeRange = "Estructuras / edificios cercanos tapan la luz de mi tejado 2 horas del día, dejando 10 de luz";
-//             break; 
-//         case 3:
-//             mensajeRange = "No hay ninguna estructura cerca de mi casa que tape luz.";
-//             break; 
-//     }
-//     textAsocRange.textContent = mensajeRange;
+    document.querySelector(".contenedorClima__hora").textContent = tiempo;
 
     
-// }
+
+    
+}
+
+function tiempo(){
+    fetch(apiUrl)
+  .then(response => {
+    // Comprobar si la respuesta es exitosa (código de estado 200)
+    if (response.status === 200) {
+      return response.json(); // Parsear la respuesta como JSON
+    } else {
+      throw new Error("No se pudo obtener los datos del clima");
+    }
+  })
+  .then(data => {
+    // Aquí puedes acceder a los datos del clima
+    console.log(data);
+    
+    // Por ejemplo, para acceder a la temperatura actual
+    const temperatura = data.main.temp;
+    let temperaturaMax = (parseFloat(data.main.temp_max) - 273.15) ;
+    temperaturaMax = temperaturaMax.toFixed(1);
+    
+    let temperaturaMin = (parseFloat(data.main.temp_min) - 273.15) ;
+    temperaturaMin = temperaturaMin.toFixed(1);
+
+    document.querySelector(".temperaturaInferior").textContent = "°" + temperaturaMin;
+    document.querySelector(".temperaturaSuperior").textContent = "°" + temperaturaMax;
+
+    let iconoClima = data.weather[0].icon
+
+    let contenedorClima = document.querySelector(".contenedorClima__clima");
+    contenedorClima.textContent = "";
+    let img = document.createElement('img');
+    imgSrc =`https://openweathermap.org/img/wn/${iconoClima}@2x.png`;
+    
+    img.src = imgSrc ;
+    contenedorClima.style.margin = '-1rem';
+    contenedorClima.appendChild(img);
+    // `https://openweathermap.org/img/wn/${iconoClima}@2x.png`
+
+
+
+  })
+  .catch(error => {
+    console.error(error);
+    setTimeout(tiempo,60000);
+  });
+}
 
 // function calcularOperacion(){
 //     let variableTarifa = inpTarifa.value;
