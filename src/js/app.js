@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
     tiempo();
     carrouselVideos();
     notas();
+    carrouselImagenes();
 
  }
 
@@ -19,7 +20,7 @@ function reloj(){
     const tiempoActual = new Date();
     let horas = tiempoActual.getHours().toString().padStart(2, '0');
     // let subfijo = "am";
-    if (horas >= 12){
+    if (horas >= 13){
         horas = horas -12;
         // subfijo = "pm";
     }
@@ -78,6 +79,41 @@ function tiempo(){
     console.error(error);
     setTimeout(tiempo,60000);
   });
+}
+
+function carrouselImagenes(){
+  let listadoOrden = [];
+  for (let i = 0; i < 10; i++) {
+    
+    let numeroAleatorio;
+    let repetido = true;
+
+    while (repetido) {
+      numeroAleatorio = Math.floor(Math.random() * numeroTotalImagenesEnCarrousel);
+      
+      // Verifica si el número generado ya existe en listadoOrden
+      if (listadoOrden.indexOf(numeroAleatorio) === -1) {
+        repetido = false;
+      }
+    }
+    let idImagen = "imagenCarrousel_" + i.toString();
+    let idImagenWebp = "imagenCarrouselWebp_" + i.toString();
+    let idImagenJpg = "imagenCarrouselJpg_" + i.toString();
+
+    let idImagenActual = document.getElementById(idImagen);
+    let idImagenActualWebp = document.getElementById(idImagenWebp);
+    let idImagenActualJpg = document.getElementById(idImagenJpg);
+
+
+    
+    listadoOrden[i] = numeroAleatorio;
+    idImagenActual.src = "build/img/carrouselImg" + numeroAleatorio +".jpg";
+    idImagenActualWebp.srcset = "build/img/carrouselImg" + numeroAleatorio +".webp";
+    idImagenActualJpg.srcset = "build/img/carrouselImg" + numeroAleatorio +".jpg";
+  }
+
+  
+ console.log(listadoOrden);
 }
 function carrouselVideos(){
     let numeroVid = Math.floor(Math.random() * listaUrlVideo.length) ;

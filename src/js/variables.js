@@ -10,6 +10,7 @@
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=3996322&appid=c99bc3bc309fa3636cd3234157f67e64"; //porfavor no me la roben :(
 const video = document.getElementById("videoYoutube");
 
+const numeroTotalImagenesEnCarrousel = 10;
 
 
 /* LISTAS */
