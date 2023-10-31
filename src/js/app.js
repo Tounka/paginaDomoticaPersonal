@@ -11,11 +11,18 @@ document.addEventListener('DOMContentLoaded', function(){
     
 
  }
+
+
 function reloj(){
     const tiempoActual = new Date();
-    const horas = tiempoActual.getHours().toString().padStart(2, '0');
+    let horas = tiempoActual.getHours().toString().padStart(2, '0');
+    // let subfijo = "am";
+    if (horas >= 12){
+        horas = horas -12;
+        // subfijo = "pm";
+    }
     const minutos = tiempoActual.getMinutes().toString().padStart(2, '0');
-    const tiempo = horas + ":" +minutos;
+    const tiempo = horas + ":" + minutos;
 
     console.log(tiempo);
 
@@ -25,7 +32,6 @@ function reloj(){
 
     
 }
-
 function tiempo(){
     fetch(apiUrl)
   .then(response => {

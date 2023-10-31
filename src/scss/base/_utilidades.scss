@@ -6,11 +6,16 @@
 // .subtitulo__slim{
 //     font-size: .6em;
 // }
-// .titulo{
-//     padding: .2rem;
-    
-//     border-radius: .1rem;
-//     background-color: v.$naranja;
-//     color: v.$blanco;
-//     font-weight: bold
-// }
+ .titulo{
+     padding: .5rem;
+    font-size: 2rem;
+     border-radius: .1rem;
+     background-color: v.$azul;
+     color: v.$blanco;
+     font-weight: bold;
+     text-align: center;
+ }
+
+ .resetBtn{
+    border: none;
+ }

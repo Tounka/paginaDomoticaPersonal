@@ -22,7 +22,7 @@
     <div class="container contenedorPrincipal ">
     
       <div class="row g-2">
-        <div class="col-4  ">
+        <div class="col-4  " id="clima">
           <div class="bg1 recuadroPrincipal contenedorClima">
      
             <div class="contenedorClima__hora">
@@ -46,33 +46,169 @@
             </div>
           </div>
         </div>
-        <div class="col-8  ">
-          <div class="bg2 recuadroPrincipal">
-            asd
-          </div>
+        <div class="col-8" id="queCocinar">
+          <div class="bg2 recuadroPrincipal recuadroDerecho">
+            <div class="titulo recuadroDerecho__recuadroDerecho">POWERED BY IA</div>
+            <div class="recuadroPrincipal__contenedorBtns">
+
+              <div class="btnChatPrincipal">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPrincipal">
+                  Que deseas cocinar?
+                </button>
+  
+                <!-- Modal -->
+                <div class="modal fade" id="modalPrincipal" tabindex="-1" aria-labelledby="modalPrincipalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="modalPrincipalLabel">Pídeme cualquier receta</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        ...
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                </div>
+  
+              <div class="btnChatRapido">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChatRapido">
+                    Opción Sencilla
+                  </button>
+      
+                  <!-- Modal -->
+                  <div class="modal fade" id="modalChatRapido" tabindex="-1" aria-labelledby="modalChatRapidoLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalChatRapidoLabel">Da click</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="btnSorprendeme">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSorprendeme">
+                    Opción Sencilla
+                  </button>
+      
+                  <!-- Modal -->
+                  <div class="modal fade" id="modalSorprendeme" tabindex="-1" aria-labelledby="modalSorprendemeLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="modalSorprendemeLabel">Da click</h5>
+                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                          ...
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                          <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            
+            
+
+
 
         </div>
 
         <div class="col-3  ">
-          <div class="bg1 recuadroSecundario">
-            asd
+          <div class="recuadroSecundario">
+            <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
+              <div class="carousel-inner w-100">
+                <div class="carousel-item active w-100">
+                  <img src="build/img/img1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="build/img/icono.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active w-100">
+                  <img src="build/img/img1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="build/img/icono.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item active w-100">
+                  <img src="build/img/img1.jpg" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                  <img src="build/img/icono.jpg" class="d-block w-100" alt="...">
+                </div>
+              </div>
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            </div>
           </div>
         </div>
         <div class="col-3  ">
-          <div class="bg2 recuadroSecundario contenedorVideo">
+          <div class="recuadroSecundario contenedorVideo">
             <iframe class="videoYoutube" src="https://www.youtube.com/embed/nzWVx1Vxq3g?si=C4r_j01Kgrc2YPmD" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <!-- videoYoutube -->
           </div>
           
         </div>
-        <div class="col-3  ">
-          <div class="bg1 recuadroSecundario">
-            asd
+        <div class="col-3  " id="musica">
+          <div class="recuadroSecundario recuadroMusica">
+            <a href="https://open.spotify.com/intl-es"><i class="bi bi-spotify"></i></a>
           </div>
         </div>
         <div class="col-3  ">
-          <div class="bg2 recuadroSecundario">
-            asd
+          <div class=" recuadroSecundario recuadroNotas">
+            <button type="button" class="resetBtn titulo" data-bs-toggle="modal" data-bs-target="#modalNotasGuardadas">
+              Ver Recetas Guardadas
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="modalNotasGuardadas" tabindex="-1" aria-labelledby="modalNotasGuardadasLabel" aria-hidden="true">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="modalNotasGuardadasLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    ...
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+           
           </div>
           
         </div>
@@ -80,6 +216,7 @@
 
 
       </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="build/js/bundle.min.js"></script>
 </body>
    

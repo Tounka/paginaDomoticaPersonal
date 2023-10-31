@@ -1,4 +1,5 @@
 @use '../base/variables' as v;
+@use '../base/mixins' as m;
 .contenedorPrincipal{
     background-color: blue;
     padding: 1rem;
@@ -54,6 +55,7 @@
             }
 
         }
+
         
     }
 
@@ -69,6 +71,7 @@
 }
 .recuadroPrincipal{
     min-height: 20rem;
+    overflow: hidden;
 }
 .recuadroSecundario{
     aspect-ratio: 1/1;
@@ -77,6 +80,37 @@
 }
 .recuadroPrincipal, .recuadroSecundario{
     border-radius: 1rem;
+    background-color: v.$azul;
+}
+.recuadroSecundario{
+    display: flex;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+}
+.recuadroMusica{
+    background-color: #1ED760;
     
+ 
+ 
+    a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        color: v.$blanco;
+        font-size: 7rem;
+        @include m.tablet{
+            font-size: 10rem;
+        }
+       
+    }
+}
+.recuadroNotas{
+    display: grid;
+    place-items: center;
+    
+    cursor: pointer;
 }
 
