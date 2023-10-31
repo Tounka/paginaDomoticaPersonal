@@ -27,3 +27,20 @@ const listaUrlVideo = [
     "https://www.youtube.com/embed/ch8qtGvTrSY?si=ceRnRJyzOaHL3EyJ",
     "https://www.youtube.com/embed/nzWVx1Vxq3g?si=NsWJcqDieMsrIYGR"
   ];
+
+
+/* OBJETOS */
+
+class receta {
+    constructor(nota, ingredientes,pasos) {
+      this.nota = nota;
+      this.ingredientes = ingredientes;
+      this.pasos = pasos;
+    }
+  }
+  const recetas = [
+    new receta('Tacos de cabra', ['valor2', 'sal', 'carne'], ['hacer de comer', 'paso dos', 'paso 3']),
+    new receta('Pizza', ['queso', 'tomate', 'masa'], ['preparar masa', 'agregar ingredientes', 'hornear']),
+    new receta('Ensalada', ['lechuga', 'tomate', 'aceite'], ['cortar lechuga', 'cortar tomate', 'añadir aceite'])
+  ];
+ // console.log(recetas[1]);
