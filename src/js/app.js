@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
     carrouselVideos();
     notas();
     carrouselImagenes();
-
+    modalImagenes();
  }
 
 
@@ -115,6 +115,19 @@ function carrouselImagenes(){
   
  console.log(listadoOrden);
 }
+function modalImagenes(){
+
+  btnModalImg.addEventListener("click", function(){
+    let elementoActivo = document.querySelector(".active");
+    let elementoActivoSrc = elementoActivo.querySelector('img');
+    console.log(elementoActivoSrc.src);
+  
+    imgSeleccionada.src = elementoActivoSrc.src;
+
+    console.log("estas dando click");
+  })
+}
+
 function carrouselVideos(){
     let numeroVid = Math.floor(Math.random() * listaUrlVideo.length) ;
     console.log(numeroVid);

@@ -12,8 +12,21 @@
         height: 100%;
         
         img{
-            object-fit: cover  ;
+            object-fit: cover ;
             height: 100%;
         }
     }
+}
+
+.contenedorModalImg{
+    height: auto;
+    
+    object-fit: contain;
+    
+}
+.modalBodyImg{
+    padding: 0 !important;
+    width: 100%;
+    
+    
 }

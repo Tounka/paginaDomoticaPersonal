@@ -1,4 +1,6 @@
 @use '../base/variables' as v;
+
+@use '../base/mixins' as m;
 .recuadroDerecho{
     position: relative;
     height: 100%;
@@ -8,12 +10,23 @@
     .recuadroPrincipal__contenedorBtns{
         
         display: flex;
-        gap: 2rem;
-        justify-content: center;
+        
+        justify-content: space-around;
         align-items: center;
+        gap: 1rem;
+        padding: 0 2rem;
         height: calc(100% - 64px);
-       background-color: v.$blanco;
+        background-color: v.$blanco;
 
+        button{
+            flex-wrap: wrap;
+            font-weight: bold;
+
+            @include m.desktop{
+                font-size: 2rem;
+            }
+            font-size: 1.4rem;
+        }
         
         
     }

@@ -19,7 +19,7 @@
 </head>
 <body>
  
-    <div class="container contenedorPrincipal ">
+    <div class="container-fluid contenedorPrincipal ">
     
       <div class="row g-2">
         <div class="col-4  " id="clima">
@@ -141,10 +141,10 @@
 
         <div class="col-3  " id="carouselImagenes">
           <div class="recuadroSecundario">
-            <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel">
-              <div class="carousel-inner w-100">
-                <div class="carousel-item active w-100">
-                  <picture>
+            <div id="carouselExampleControls" class="carousel slide w-100" data-bs-ride="carousel" >
+              <div class="carousel-inner w-100 " type="button" data-bs-toggle="modal" data-bs-target="#modalImg" id="btnModalImg">
+                <div class="carousel-item active w-100" >
+                  <picture >
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_0">
                     <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_0">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_0">
@@ -234,6 +234,32 @@
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
               </button>
+              <!-- modalImg -->
+              <div class="modal fade" id="modalImg" tabindex="-1" aria-labelledby="modalImgLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="modalImgLabel">Imagen</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body modalBodyImg">
+                      <div class="container-fluid contenedorModalImg">
+                        <div class=" w-100">
+                  
+                            <img src="" class="d-block w-100 " alt="Imagen gran formato" id="imgSeleccionada" loading="lazy">
+                          
+                          
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
