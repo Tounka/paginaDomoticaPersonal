@@ -13,8 +13,28 @@ document.addEventListener('DOMContentLoaded', function(){
     notas();
     carrouselImagenes();
     modalImagenes();
+
+    guardarRecetasPrincipa();
  }
 
+ function guardarRecetasPrincipa(){
+  btnGuardarRecetaPrincipal.addEventListener("click", function(){
+    let input =inputTextoRecetaASolicitar.value;
+    input = input.split("?");
+    let nombreReceta = input[0];
+    let ingredientesReceta = input[1];
+    let stepsReceta = input[2];
+    // separar cadenas
+    ingredientesReceta = ingredientesReceta.split(",");
+    stepsReceta = stepsReceta.split(",");
+
+    
+    recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
+
+    console.log(recetas);
+    notas();
+  });
+ }
 
 function reloj(){
     const tiempoActual = new Date();
@@ -137,6 +157,8 @@ function carrouselVideos(){
     console.log(vidAReproducir);
 }
 function notas(){
+  const acordeonRecetas = document.getElementById("acordeonRecetas");
+  acordeonRecetas.innerHTML = "";
     recetas.forEach(x => {
         let nuevoAcordeonItem = document.createElement("div");
         nuevoAcordeonItem.className = "accordion-item";
@@ -191,7 +213,6 @@ function notas(){
         collapse.appendChild(body);
         nuevoAcordeonItem.appendChild(collapse);
 
-        let acordeonRecetas = document.getElementById("acordeonRecetas");
         acordeonRecetas.appendChild(nuevoAcordeonItem);
     });
 }

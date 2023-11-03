@@ -10,6 +10,8 @@
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=3996322&appid=c99bc3bc309fa3636cd3234157f67e64"; //porfavor no me la roben :(
 const video = document.getElementById("videoYoutube");
 
+const inputTextoRecetaASolicitar = document.getElementById("inputTextoRecetaASolicitar");
+const btnGuardarRecetaPrincipal = document.getElementById("btnGuardarRecetaPrincipal");
 
 const imgSeleccionada = document.getElementById("imgSeleccionada");
 const btnModalImg = document.getElementById("btnModalImg");
@@ -37,8 +39,7 @@ const listaUrlVideo = [
     "https://www.youtube.com/embed/HR11sbrIC6s?si=n-tgqH1vHZM4c-Ve",
     "https://www.youtube.com/embed/topg-59NCNA?si=M6MJb2X8HiKsPL5v",
     "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj",
-    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj",
-    "https://www.youtube.com/embed/25l4ZbYAOOA?si=fdTNm4BevX1E5rQb"
+    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj"
   ];
 
 
