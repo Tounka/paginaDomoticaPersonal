@@ -30,7 +30,15 @@ const listaUrlVideo = [
     "https://www.youtube.com/embed/HR11sbrIC6s?si=GcZ3lCVgG2WAm-Rt",
     "https://www.youtube.com/embed/aEdeE5v27Nw?si=0t6fGBHeWhR080YX",
     "https://www.youtube.com/embed/ch8qtGvTrSY?si=ceRnRJyzOaHL3EyJ",
-    "https://www.youtube.com/embed/nzWVx1Vxq3g?si=NsWJcqDieMsrIYGR"
+    "https://www.youtube.com/embed/nzWVx1Vxq3g?si=NsWJcqDieMsrIYGR",
+    "https://www.youtube.com/embed/EzBMnYlNsNE?si=qqaYUuJ-Xcj1zrHE",
+    "https://www.youtube.com/embed/j8RveuAGDsI?si=QkvWYgE2p30GW8mA",
+    "https://www.youtube.com/embed/Fjdyw8Cvxbs?si=RE3wvjIsVHRwqwzJ",
+    "https://www.youtube.com/embed/HR11sbrIC6s?si=n-tgqH1vHZM4c-Ve",
+    "https://www.youtube.com/embed/topg-59NCNA?si=M6MJb2X8HiKsPL5v",
+    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj",
+    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj",
+    "https://www.youtube.com/embed/25l4ZbYAOOA?si=fdTNm4BevX1E5rQb"
   ];
 
 
