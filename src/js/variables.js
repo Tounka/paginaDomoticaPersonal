@@ -14,7 +14,7 @@ const video = document.getElementById("videoYoutube");
 const imgSeleccionada = document.getElementById("imgSeleccionada");
 const btnModalImg = document.getElementById("btnModalImg");
 
-const numeroTotalImagenesEnCarrousel = 10;
+const numeroTotalImagenesEnCarrousel = 137;
 
 
 /* LISTAS */
