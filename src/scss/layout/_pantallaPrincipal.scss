@@ -1,7 +1,7 @@
 @use '../base/variables' as v;
 @use '../base/mixins' as m;
 .contenedorPrincipal{
-    background-color: blue;
+    
     padding: 1rem;
     height: 100%;
     width: 100%;
@@ -72,6 +72,8 @@
 .recuadroPrincipal{
     min-height: 20rem;
     overflow: hidden;
+    border: 4px solid v.$azul;
+        
 }
 .recuadroSecundario{
     aspect-ratio: 1/1;
@@ -80,6 +82,7 @@
 }
 .recuadroPrincipal, .recuadroSecundario{
     border-radius: 1rem;
+    
     background-color: v.$azul;
 }
 .recuadroSecundario{
@@ -87,6 +90,8 @@
     overflow: hidden;
     height: 100%;
     width: 100%;
+
+    
 }
 .recuadroMusica{
     background-color: #1ED760;

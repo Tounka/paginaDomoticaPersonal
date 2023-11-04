@@ -98,7 +98,7 @@
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary btn--slim" id="btnGuardarRecetaPrincipal">Guardar Receta</button>
+                        <button type="button" class="btn btn-primary btn--slim" id="btnGuardarRecetaPrincipal" data-bs-target="#modalNotasGuardadas" data-bs-toggle="modal">Guardar Receta</button>
                       </div>
                     </div>
                   </div>
@@ -112,7 +112,7 @@
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSorprendeme">
                     Opción Sencilla
                   </button>
-      
+                  
                   <!-- Modal -->
                   <div class="modal fade" id="modalSorprendeme" tabindex="-1" aria-labelledby="modalSorprendemeLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered">
@@ -290,7 +290,7 @@
             
             <!-- Modal -->
             <div class="modal fade" id="modalNotasGuardadas" tabindex="-1" aria-labelledby="modalNotasGuardadasLabel" aria-hidden="true">
-              <div class="modal-dialog">
+              <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h5 class="modal-title" id="modalNotasGuardadasLabel">Recetas <i class="bi bi-card-text"></i></h5>
@@ -309,8 +309,8 @@
 
                   </div>
                   <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    
                   </div>
                 </div>
               </div>

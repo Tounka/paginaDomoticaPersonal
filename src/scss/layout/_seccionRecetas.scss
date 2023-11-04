@@ -3,6 +3,6 @@
     flex-direction: column;
     .contenedor__ingredientes{
         display: flex;
-    
+        text-wrap: wrap;
     }
 }

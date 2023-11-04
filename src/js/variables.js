@@ -44,6 +44,14 @@ const listaUrlVideo = [
   ];
 
 
+  const inputChatGpt = {
+    inputPrincipal: "Aquí tienes un conjunto de instrucciones que debes seguir para generar una receta. Comienza con el nombre de la receta, seguido de un signo de interrogación. Ejemplo: 'Nombre de la receta?' Luego, agrega los ingredientes de la receta separados por el signo '&'. Ejemplo: 'Ingrediente1&Ingrediente2&Ingrediente3'. Después, coloca un signo de interrogación y continúa con los pasos de preparación de la receta, separados por el signo '&'. Ejemplo: 'Paso1&Paso2&Paso3'. Finaliza cada paso con un punto y coma ('&') para separar las instrucciones de preparación. Ejemplo: 'Cortar el ingrediente en trozos pequeños. & Saltear los ingredientes en una sartén caliente. & Agregar el ingrediente a la mezcla.' Para agregar una descripción del alimento, simplemente agrega una sección después de los ingredientes y antes de los pasos. Puedes utilizar un signo de interrogación para separarla. Ejemplo: 'Descripción del alimento? Esto es una breve descripción del alimento que se está utilizando en la receta.' Para finalizar la receta, asegúrate de agregar un punto y coma después del último paso de preparación. Hamburguesa de pollo?Pechuga de pollo&Pan de hamburguesa&Lechuga&Tomate&Queso&Mayonesa&Mostaza&Ketchup&Pimienta?Una jugosa hamburguesa de pollo, perfecta para satisfacer tus antojos. &Comienza por sazonar la pechuga de pollo con pimienta y cocínala a la parrilla. &Mientras tanto, tuesta ligeramente el pan de hamburguesa. &Lava y corta la lechuga y el tomate en rodajas. &Una vez que el pollo esté cocido, coloca una loncha de queso sobre él para que se derrita. &Ensambla la hamburguesa colocando la pechuga de pollo con queso en el pan tostado, seguido de la lechuga y el tomate. &Añade mayonesa, mostaza y ketchup al gusto. &Cierra la hamburguesa y disfruta de este delicioso sándwich de pollo. Siguiendo estas instrucciones, crea la receta del alimento o descripción que dire a continuación: pay de limón.",
+    edad: 30,
+    ciudad: "Ejemploville"
+    };
+
+
+
 /* OBJETOS */
 
 class receta {
@@ -59,3 +67,5 @@ class receta {
     new receta('Ensalada', ['lechuga', 'tomate', 'aceite'], ['cortar lechuga', 'cortar tomate', 'añadir aceite'])
   ];
  // console.log(recetas[1]);
+
+

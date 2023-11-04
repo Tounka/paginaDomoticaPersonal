@@ -25,12 +25,13 @@ document.addEventListener('DOMContentLoaded', function(){
     let ingredientesReceta = input[1];
     let stepsReceta = input[2];
     // separar cadenas
-    ingredientesReceta = ingredientesReceta.split(",");
-    stepsReceta = stepsReceta.split(",");
+    ingredientesReceta = ingredientesReceta.split("&");
+    stepsReceta = stepsReceta.split("&");
 
     
     recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
 
+    inputTextoRecetaASolicitar.value= "";
     console.log(recetas);
     notas();
   });
