@@ -14,6 +14,9 @@ const inputTextoRecetaASolicitar = document.getElementById("inputTextoRecetaASol
 const btnGuardarRecetaPrincipal = document.getElementById("btnGuardarRecetaPrincipal");
 
 const imgSeleccionada = document.getElementById("imgSeleccionada");
+const imgSeleccionadaWebp = document.getElementById("imgSeleccionadaWebp");
+const imgSeleccionadaJpeg = document.getElementById("imgSeleccionadaJpeg");
+
 const btnModalImg = document.getElementById("btnModalImg");
 
 const numeroTotalImagenesEnCarrousel = 137;
@@ -37,9 +40,7 @@ const listaUrlVideo = [
     "https://www.youtube.com/embed/j8RveuAGDsI?si=QkvWYgE2p30GW8mA",
     "https://www.youtube.com/embed/Fjdyw8Cvxbs?si=RE3wvjIsVHRwqwzJ",
     "https://www.youtube.com/embed/HR11sbrIC6s?si=n-tgqH1vHZM4c-Ve",
-    "https://www.youtube.com/embed/topg-59NCNA?si=M6MJb2X8HiKsPL5v",
-    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj",
-    "https://www.youtube.com/embed/E_qLMOf9lDs?si=HoyxlXK2_pX0mGFj"
+    "https://www.youtube.com/embed/topg-59NCNA?si=M6MJb2X8HiKsPL5v"
   ];
 
 

@@ -53,12 +53,12 @@
               <div class="btnChatRapido">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChatRapido">
-                  Opción Sencilla
+                  Receta aleatoria
                 </button>
     
                 <!-- Modal -->
-                <div class="modal fade" id="modalChatRapido" tabindex="-1" aria-labelledby="modalChatRapidoLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                <div class="modal fade " id="modalChatRapido" tabindex="-1" aria-labelledby="modalChatRapidoLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="modalChatRapidoLabel">Da click</h5>
@@ -68,8 +68,8 @@
                         ...
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary btn--slim">Guardar Receta</button>
                       </div>
                     </div>
                   </div>
@@ -84,7 +84,7 @@
   
                 <!-- Modal -->
                 <div class="modal fade" id="modalPrincipal" tabindex="-1" aria-labelledby="modalPrincipalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
+                  <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
                         <h5 class="modal-title" id="modalPrincipalLabel">Pídeme cualquier receta</h5>
@@ -92,13 +92,13 @@
                       </div>
                       <div class="modal-body">
                         <div class="mb-3">
-                          <label for="inputTextoRecetaASolicitar" class="form-label">Email address</label>
+                          <label for="inputTextoRecetaASolicitar" class="form-label">Descripción: </label>
                           <input type="text" class="form-control" id="inputTextoRecetaASolicitar" placeholder="Escribe la receta">
                         </div>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary" id="btnGuardarRecetaPrincipal">Guardar Receta</button>
+                        <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
+                        <button type="button" class="btn btn-primary btn--slim" id="btnGuardarRecetaPrincipal">Guardar Receta</button>
                       </div>
                     </div>
                   </div>
@@ -115,18 +115,18 @@
       
                   <!-- Modal -->
                   <div class="modal fade" id="modalSorprendeme" tabindex="-1" aria-labelledby="modalSorprendemeLabel" aria-hidden="true">
-                    <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-header">
                           <h5 class="modal-title" id="modalSorprendemeLabel">Receta Sorpresa</h5>
-                          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                          <button type="button" class="btn-close btn--slim" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
                           ...
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                          <button type="button" class="btn btn-primary">Save changes</button>
+                          <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary btn--slim">Guardar</button>
                         </div>
                       </div>
                     </div>
@@ -149,7 +149,7 @@
                 <div class="carousel-item active w-100" >
                   <picture >
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_0">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_0">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_0">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_0">
                   </picture>
                   
@@ -157,7 +157,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_1">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_1">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_1">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_1">
                   </picture>
                   
@@ -165,7 +165,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_2">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_2">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_2">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_2">
                   </picture>
                   
@@ -173,7 +173,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_3">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_3">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_3">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_3">
                   </picture>
                   
@@ -181,7 +181,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_4">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_4">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_4">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_4">
                   </picture>
                   
@@ -189,7 +189,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_5">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_5">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_5">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_5">
                   </picture>
                   
@@ -197,7 +197,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_6">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_6">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_6">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_6">
                   </picture>
                   
@@ -205,7 +205,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_7">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_7">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_7">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_7">
                   </picture>
                   
@@ -213,7 +213,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_8">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_8">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_8">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_8">
                   </picture>
                   
@@ -221,7 +221,7 @@
                 <div class="carousel-item w-100">
                   <picture>
                     <source srcset="build/img/img1.webp" type="image/webp" id="imagenCarrouselWebp_9">
-                    <source srcset="build/img/img1.jpg" type="image/jpeg" id="imagenCarrouselJpg_9">
+                    <source srcset="build/img/img1.jpeg" type="image/jpeg" id="imagenCarrouselJpg_9">
                     <img src="build/img/img1.jpg" class="d-block w-100 " alt="Imagen" id="imagenCarrousel_9">
                   </picture>
                   
@@ -248,8 +248,12 @@
                     <div class="modal-body modalBodyImg">
                       <div class="container-fluid contenedorModalImg">
                         <div class=" w-100">
-                  
+                          <picture>
+                            <source srcset="" type="image/webp" id="imgSeleccionadaWebp" >
+                            <source srcset="" type="image/jpeg" id="imgSeleccionadaJpeg" >
                             <img src="" class="d-block w-100 " alt="Imagen gran formato" id="imgSeleccionada" loading="lazy">
+                          </picture>
+                            
                           
                           
                         </div>

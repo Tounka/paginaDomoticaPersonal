@@ -140,9 +140,13 @@ function modalImagenes(){
   btnModalImg.addEventListener("click", function(){
     let elementoActivo = document.querySelector(".active");
     let elementoActivoSrc = elementoActivo.querySelector('img');
-    console.log(elementoActivoSrc.src);
-  
-    imgSeleccionada.src = elementoActivoSrc.src;
+    elementoActivoSrc = elementoActivoSrc.src;
+    elementoActivoSrcWebp = elementoActivoSrc.replace(".jpg", ".webp");
+    elementoActivoSrcJpeg = elementoActivoSrc.replace(".jpg", ".jpeg");
+    console.log(elementoActivoSrc);
+    imgSeleccionadaWebp.srcset = elementoActivoSrcWebp;
+    imgSeleccionadaJpeg.srcset = elementoActivoSrcJpeg;
+    imgSeleccionada.src = elementoActivoSrc;
 
     console.log("estas dando click");
   })
