@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- autor -->
     <meta name="author" content="Ramon Castillo">
-
+    <link rel="shortcut icon" href="build/img/iconoPrincipalSmall.jpg">
 
     
     
@@ -53,7 +53,7 @@
               <div class="btnChatRapido">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChatRapido">
-                  Receta aleatoria
+                  Receta Sencilla
                 </button>
     
                 <!-- Modal -->
@@ -61,25 +61,47 @@
                   <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="modalChatRapidoLabel">Da click</h5>
+                        <h5 class="modal-title" id="modalChatRapidoLabel">Arma tu receta</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                       </div>
                       <div class="modal-body">
-                        ...
+                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="chatRapidoTipoProteina">
+                          <option selected hidden disabled>Que proteína quieres?</option>
+                          <option value="Carne">Carne</option>
+                          <option value="Pescado">Pescado</option>
+                          <option value="Pollo">Pollo</option>
+                          <option value="Vegetal">Vegetal</option>
+                      
+                        </select>
+                        <div >
+                          <label for="chatRapidoTipoComida" class="form-label">Que tipo de comida quieres?</label>
+                          <input type="text" class="form-control" id="chatRapidoTipoComida" placeholder="Cualquiera">
+                        </div>
+
+                        <div class="row mb-3">
+                          <div class="col-3">
+                            <label for="chatRapidoCantidadPersonas" class="form-label text-center">Para cuantas personas?</label>
+                            <input type="number" class="form-control" id="chatRapidoCantidadPersonas" placeholder="3">
+                          </div>
+                          <div class="col-9 text-center d-flex flex-column justify-content-center">
+                            <label for="chatRapidoPicor_Dulsura" class="form-label" id="textoChatRapidoPicor_Dulsura">Neutro (ni muy picante ni muy dulce)</label>
+                            <input type="range" class="form-range" id="chatRapidoPicor_Dulsura" min="0" max="6" value="3">
+                          </div>
+                        </div>
                       </div>
                       <div class="modal-footer">
                         <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary btn--slim">Guardar Receta</button>
+                        <button type="button" class="btn btn-primary btn--slim" id="btnGuardarRecetaSencilla">Guardar Receta</button>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> 
 
               <div class="btnChatPrincipal">
                 <!-- Button trigger modal -->
                 <button type="button"  class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalPrincipal">
-                  Que deseas cocinar?
+                  Que receta quieres?
                 </button>
   
                 <!-- Modal -->
@@ -110,7 +132,7 @@
                 <div class="btnSorprendeme">
                   <!-- Button trigger modal -->
                   <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalSorprendeme">
-                    Opción Sencilla
+                    Opción Aleatoria
                   </button>
                   
                   <!-- Modal -->
@@ -122,11 +144,16 @@
                           <button type="button" class="btn-close btn--slim" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div class="modal-body">
-                          ...
+                          <div class="accordion" id="acordeonRecetasAleatorio">
+
+         
+                     
+                      
+                          </div>
                         </div>
                         <div class="modal-footer">
                           <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary btn--slim">Guardar</button>
+                          <button type="button" class="btn btn-primary btn--slim" id="">Guardar</button>
                         </div>
                       </div>
                     </div>
@@ -285,7 +312,7 @@
         <div class="col-3  " id="recetasGuardadas">
           <div class=" recuadroSecundario recuadroNotas">
             <button type="button" class="resetBtn titulo" data-bs-toggle="modal" data-bs-target="#modalNotasGuardadas">
-              Ver Recetas Guardadas 
+              <i class="bi bi-card-text iconoNotas"></i>
             </button>
             
             <!-- Modal -->
