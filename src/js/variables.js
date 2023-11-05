@@ -29,6 +29,7 @@ const btnModalImg = document.getElementById("btnModalImg");
 
 const numeroTotalImagenesEnCarrousel = 137;
 
+let recetasJSON;
 
 /* LISTAS */
 
@@ -78,11 +79,25 @@ class receta {
       this.pasos = pasos;
     }
   }
-  const recetas = [
+  let recetas = [
     new receta('Tacos de cabra', ['valor2', 'sal', 'carne'], ['hacer de comer', 'paso dos', 'paso 3']),
     new receta('Pizza', ['queso', 'tomate', 'masa'], ['preparar masa', 'agregar ingredientes', 'hornear']),
     new receta('Ensalada', ['lechuga', 'tomate', 'aceite'], ['cortar lechuga', 'cortar tomate', 'añadir aceite'])
   ];
+
+  const localStorageItems = Object.keys(localStorage);
+
+if (localStorageItems.length > 0) {
+
+} else {
+  
+  recetasJSON = JSON.stringify(recetas);
+  localStorage.setItem("recetasGuardadasJSON", recetasJSON);
+   recetasRecuperadoJSON = localStorage.getItem("recetasGuardadasJSON");
+   objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
+
+  recetas = objetoRecuperado;
+}
  // console.log(recetas[1]);
 
 

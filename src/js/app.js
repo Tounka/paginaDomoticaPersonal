@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function(){
     notas();
     carrouselImagenes();
     modalImagenes();
+
     modalRecetaAleatoria();
     modalRecetaRapida();
     guardarRecetasPrincipa();
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     cadenaReceta = "La proteina de la receta sera " +proteina+ " el tipo de la comida es " + tipo + " las porciones son para " + cantidad + " personas y debe ser " + picorDulsura;
-    console.log(cadenaReceta);
+    
   });
 
   // actualizar range 
@@ -130,7 +131,14 @@ document.addEventListener('DOMContentLoaded', function(){
     recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
 
     inputTextoRecetaASolicitar.value= "";
-    console.log(recetas);
+    
+    recetasJSON = JSON.stringify(recetas);
+    localStorage.setItem("recetasGuardadasJSON", recetasJSON);
+     recetasRecuperadoJSON = localStorage.getItem("recetasGuardadasJSON");
+     objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
+
+    recetas = objetoRecuperado;
+
     notas();
   });
  }
@@ -146,7 +154,7 @@ function reloj(){
     const minutos = tiempoActual.getMinutes().toString().padStart(2, '0');
     const tiempo = horas + ":" + minutos;
 
-    console.log(tiempo);
+   
 
     document.querySelector(".contenedorClima__hora").textContent = tiempo;
 
@@ -232,7 +240,7 @@ function carrouselImagenes(){
   }
 
   
- console.log(listadoOrden);
+ 
 }
 function modalImagenes(){
 
@@ -242,24 +250,28 @@ function modalImagenes(){
     elementoActivoSrc = elementoActivoSrc.src;
     elementoActivoSrcWebp = elementoActivoSrc.replace(".jpg", ".webp");
     elementoActivoSrcJpeg = elementoActivoSrc.replace(".jpg", ".jpeg");
-    console.log(elementoActivoSrc);
+    
     imgSeleccionadaWebp.srcset = elementoActivoSrcWebp;
     imgSeleccionadaJpeg.srcset = elementoActivoSrcJpeg;
     imgSeleccionada.src = elementoActivoSrc;
 
-    console.log("estas dando click");
+    
   })
 }
 
 function carrouselVideos(){
     let numeroVid = Math.floor(Math.random() * listaUrlVideo.length) ;
-    console.log(numeroVid);
+    
     let vidAReproducir = listaUrlVideo[numeroVid] + "&mute=1&autoplay=1";
     video.src = vidAReproducir;
 
-    console.log(vidAReproducir);
+    
 }
 function notas(){
+  let recetasRecuperadoJSON = localStorage.getItem("recetasGuardadasJSON");
+  let objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
+  recetas = objetoRecuperado;
+
   const acordeonRecetas = document.getElementById("acordeonRecetas");
   acordeonRecetas.innerHTML = "";
     recetas.forEach(x => {
