@@ -9,6 +9,9 @@
 // let btnCalcular = document.getElementById("btnCalcular");
 const apiUrl = "https://api.openweathermap.org/data/2.5/weather?id=3996322&appid=c99bc3bc309fa3636cd3234157f67e64"; //porfavor no me la roben :(
 const video = document.getElementById("videoYoutube");
+const acordeonRecetas = document.getElementById("acordeonRecetas");
+
+
 
 const inputTextoRecetaASolicitar = document.getElementById("inputTextoRecetaASolicitar");
 const btnGuardarRecetaPrincipal = document.getElementById("btnGuardarRecetaPrincipal");
@@ -27,6 +30,9 @@ const imgSeleccionadaWebp = document.getElementById("imgSeleccionadaWebp");
 const imgSeleccionadaJpeg = document.getElementById("imgSeleccionadaJpeg");
 
 const btnModalImg = document.getElementById("btnModalImg");
+const btnGuardarRecetaRapida = document.getElementById("btnGuardarRecetaRapida");
+
+
 
 const numeroTotalImagenesEnCarrousel = 137;
 
@@ -81,9 +87,19 @@ class receta {
     }
   }
   let recetas = [
-    new receta('Tacos de cabra', ['valor2', 'sal', 'carne'], ['hacer de comer', 'paso dos', 'paso 3']),
-    new receta('Pizza', ['queso', 'tomate', 'masa'], ['preparar masa', 'agregar ingredientes', 'hornear']),
-    new receta('Ensalada', ['lechuga', 'tomate', 'aceite'], ['cortar lechuga', 'cortar tomate', 'añadir aceite'])
+    new receta('Pizza', 
+    ["Masa para pizza", "Tomate", "Queso", "Jamón", "Champiñones", "Pimiento", "Aceitunas", "Sal"], [
+      "La pizza es un clásico de la cocina italiana, perfecta para compartir con amigos y familia. ",
+      "Comienza por preparar la masa para pizza, siguiendo el paso a paso de tu receta favorita o puedes comprarla lista. ",
+      "Precalienta el horno a temperatura alta. ", 
+      "Extiende la masa sobre una bandeja para horno previamente enharinada. ",
+      "Unta el tomate triturado sobre la masa, dejando un borde sin cubrir. ",
+      "Espolvorea generosamente el queso rallado sobre el tomate. ",
+      "Distribuye el jamón, los champiñones, los pimientos y las aceitunas sobre la pizza. ",
+      "Añade una pizca de sal y espolvorea orégano al gusto. ",
+      "Introduce la pizza en el horno y cocina hasta que la masa esté dorada y el queso burbujeante, aproximadamente 15-20 minutos. ",
+      "Retira del horno y deja reposar unos minutos antes de cortar y servir. ",
+      "Disfruta de esta deliciosa pizza casera llena de sabores y texturas."])
   ];
 
   const localStorageItems = Object.keys(localStorage);

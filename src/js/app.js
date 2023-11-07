@@ -106,6 +106,12 @@ function modalRecetaAleatoria(){
             nuevoAcordeonItem.appendChild(collapse);
              
              acordeonRecetasAleatorio.appendChild(nuevoAcordeonItem);
+
+          btnGuardarRecetaRapida.addEventListener("click", function(){
+            recetasJSON = JSON.stringify(recetas);
+            localStorage.setItem("recetasGuardadasJSON", recetasJSON);
+            notas();
+          })
     }
     catch(error) {
       console.error('Error:', error);
@@ -117,32 +123,56 @@ function modalRecetaAleatoria(){
 }
 
  function guardarRecetasPrincipa(){
+
+  btnGuardarRecetaPrincipal.addEventListener("click", async function(){
+    try{
+      
+      
+      const contenenedorBarraDeCarga = document.createElement("div");
+      contenenedorBarraDeCarga.className = "d-flex align-items-center contenenedorBarraDeCarga";
+      contenenedorBarraDeCarga.innerHTML = `
+      <strong role="status">Estamos creando la receta, el proceso puede tardar un poco...</strong>
+      <div class="spinner-border ms-auto" aria-hidden="true"></div>
+      `;
+
+    // Agregar el contenido de la barra de carga antes de borrar el contenido original
+    acordeonRecetas.appendChild(contenenedorBarraDeCarga);
+
+
+
+
+
+      let input =inputTextoRecetaASolicitar.value;
+      let recetaPorChatGpt = await conseguirRecetaChatGpt(input);
+      console.log(recetaPorChatGpt);
+
+      recetaPorChatGpt = recetaPorChatGpt.split("?");
+      let nombreReceta = recetaPorChatGpt[0];
+      let ingredientesReceta = recetaPorChatGpt[1];
+      let stepsReceta = recetaPorChatGpt[2];
+      // separar cadenas
+      ingredientesReceta = ingredientesReceta.split("&");
+      stepsReceta = stepsReceta.split("&");
+
+      
+      recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
+
+      inputTextoRecetaASolicitar.value= "";
+      
+      recetasJSON = JSON.stringify(recetas);
+      localStorage.setItem("recetasGuardadasJSON", recetasJSON);
+      recetasRecuperadoJSON = localStorage.getItem("recetasGuardadasJSON");
+      objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
+
+      recetas = objetoRecuperado;
+
+      notas();
+  }
+  catch(error) {
+    console.error('Error:', error);
   
-  btnGuardarRecetaPrincipal.addEventListener("click", function(){
-    let input =inputTextoRecetaASolicitar.value;
-
-    let recetaPorChatGpt = conseguirRecetaChatGpt(input);
-    recetaPorChatGpt = recetaPorChatGpt.split("?");
-    let nombreReceta = recetaPorChatGpt[0];
-    let ingredientesReceta = recetaPorChatGpt[1];
-    let stepsReceta = recetaPorChatGpt[2];
-    // separar cadenas
-    ingredientesReceta = ingredientesReceta.split("&");
-    stepsReceta = stepsReceta.split("&");
-
     
-    recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
-
-    inputTextoRecetaASolicitar.value= "";
-    
-    recetasJSON = JSON.stringify(recetas);
-    localStorage.setItem("recetasGuardadasJSON", recetasJSON);
-     recetasRecuperadoJSON = localStorage.getItem("recetasGuardadasJSON");
-     objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
-
-    recetas = objetoRecuperado;
-
-    notas();
+ }
   });
  }
 
@@ -275,7 +305,7 @@ function notas(){
   let objetoRecuperado = JSON.parse(recetasRecuperadoJSON);
   recetas = objetoRecuperado;
 
-  const acordeonRecetas = document.getElementById("acordeonRecetas");
+  
   acordeonRecetas.innerHTML = "";
     recetas.forEach(x => {
         let nuevoAcordeonItem = document.createElement("div");
@@ -332,5 +362,9 @@ function notas(){
         nuevoAcordeonItem.appendChild(collapse);
 
         acordeonRecetas.appendChild(nuevoAcordeonItem);
+
+        if(x === recetas[(recetas.length) - 1]){
+          collapse.className = "accordion-collapse collapse show";
+        }
     });
 }

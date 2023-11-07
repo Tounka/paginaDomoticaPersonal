@@ -1,6 +1,3 @@
-const API_KEY = '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';
-
-
 
 async function conseguirRecetaChatGpt(receta) {
     let consultaGpt = inputChatGpt.inputPrincipal;
@@ -20,8 +17,8 @@ async function conseguirRecetaChatGpt(receta) {
             })
         });
 
-        const data = await response.json();
-        const respuesta = data.choices[0].message.content;
+        let data = await response.json();
+        let respuesta = data.choices[0].message.content;
         console.log(respuesta);
         return respuesta;
         
@@ -46,8 +43,8 @@ async function conseguirRecetaAleatoriaChatGpt() {
             })
         });
 
-        const data = await response.json();
-        const respuesta = data.choices[0].message.content;
+        let data = await response.json();
+        let respuesta = data.choices[0].message.content;
         console.log(respuesta);
         return respuesta;
         

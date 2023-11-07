@@ -1,12 +1,19 @@
+@use '../base/variables' as v;
 .contenedorReceta{
     display: flex;
     flex-direction: column;
     .contenedor__ingredientes{
         display: flex;
         text-wrap: wrap;
+        font-weight: 500;
+        margin: 2rem 0;
     }
 }
 
 .iconoNotas{
     font-size: 5rem;
+}
+.accordion-button, .modal-header{
+    font-weight: bold;
+    color: v.$azul !important;
 }
