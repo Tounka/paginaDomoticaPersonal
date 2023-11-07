@@ -12,6 +12,7 @@ const video = document.getElementById("videoYoutube");
 
 const inputTextoRecetaASolicitar = document.getElementById("inputTextoRecetaASolicitar");
 const btnGuardarRecetaPrincipal = document.getElementById("btnGuardarRecetaPrincipal");
+btnSorprendeme
 const btnGuardarRecetaSencilla = document.getElementById("btnGuardarRecetaSencilla");
   const chatRapidoTipoProteina = document.getElementById("chatRapidoTipoProteina");
   const chatRapidoTipoComida = document.getElementById("chatRapidoTipoComida");
@@ -19,7 +20,7 @@ const btnGuardarRecetaSencilla = document.getElementById("btnGuardarRecetaSencil
   const chatRapidoPicor_Dulsura = document.getElementById("chatRapidoPicor_Dulsura");
 
 const textoChatRapidoPicor_Dulsura = document.getElementById("textoChatRapidoPicor_Dulsura");
-
+const btnSorprendeme = document.getElementById("btnSorprendeme");
 
 const imgSeleccionada = document.getElementById("imgSeleccionada");
 const imgSeleccionadaWebp = document.getElementById("imgSeleccionadaWebp");

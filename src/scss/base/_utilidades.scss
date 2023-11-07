@@ -23,3 +23,10 @@
  .resetBtn{
     border: none;
  }
+ .contenenedorBarraDeCarga{
+    flex-direction: column;
+    justify-content: center ;
+    div{
+        margin: 1rem auto;
+    }
+ }

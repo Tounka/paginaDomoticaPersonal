@@ -30,72 +30,94 @@ document.addEventListener('DOMContentLoaded', function(){
 
   
  }
- function modalRecetaAleatoria(){
-
-
-  const acordeonRecetasAleatorio = document.getElementById("acordeonRecetasAleatorio");
-  acordeonRecetasAleatorio.innerHTML = "";
+function modalRecetaAleatoria(){
+  btnSorprendeme.addEventListener("click", async function(){
+    try{
+      let chatGptOutput = await conseguirRecetaAleatoriaChatGpt()
+      console.log(chatGptOutput) 
+      let recetaPorChatGpt = chatGptOutput;
+        recetaPorChatGpt = recetaPorChatGpt.split("?");
+        let nombreReceta = recetaPorChatGpt[0];
+        let ingredientesReceta = recetaPorChatGpt[1];
+        let stepsReceta = recetaPorChatGpt[2];
+        // separar cadenas
+        ingredientesReceta = ingredientesReceta.split("&");
+        stepsReceta = stepsReceta.split("&");
     
-        let x = recetas[0];  //Cambiar por el input
-        let nuevoAcordeonItem = document.createElement("div");
-        nuevoAcordeonItem.className = "accordion-item";
-
-        let h2 = document.createElement("h2");
-        h2.className = "accordion-header";
-        let idNum = Math.floor(Math.random() * 10000) + 1;
-        idNum = idNum.toString();
-        h2.id = "headingfour";
-
-        let button = document.createElement("button");
-        button.className = "accordion-button collapsed";
-        button.type = "button";
-        button.setAttribute("data-bs-toggle", "collapse");
-        button.setAttribute("data-bs-target", "#collapseThrees"+idNum);
-        button.setAttribute("aria-expanded", "false");
-        button.setAttribute("aria-controls", "collapseThrees"+idNum);
-        button.textContent = x.nota;
-
-        h2.appendChild(button);
-        nuevoAcordeonItem.appendChild(h2);
-
-        let collapse = document.createElement("div");
-        collapse.className = "accordion-collapse collapse";
-        collapse.id = "collapseThrees"+idNum;
-        collapse.setAttribute("aria-labelledby", "headingfour");
-        collapse.setAttribute("data-bs-parent", "#acordeonRecetasAleatorio");
-
-        let body = document.createElement("div");
-        body.className = "accordion-body";
-
-        let contenedorReceta = document.createElement("div");
-        contenedorReceta.className = "contenedorReceta";
-
-        let contenedorIngredientes = document.createElement("div");
-        contenedorIngredientes.className = "contenedor__ingredientes";
-        contenedorIngredientes.textContent = x.ingredientes.join(", ");
-
-        let listaPasos = document.createElement("ol");
-        listaPasos.className = "contenedor__pasos";
-
-        x.pasos.forEach(element => {
-            let paso = document.createElement("li");
-            paso.textContent = element;
-            listaPasos.appendChild(paso);
-        });
-
-        contenedorReceta.appendChild(contenedorIngredientes);
-        contenedorReceta.appendChild(listaPasos);
-
-        body.appendChild(contenedorReceta);
-        collapse.appendChild(body);
-        nuevoAcordeonItem.appendChild(collapse);
-         
-         acordeonRecetasAleatorio.appendChild(nuevoAcordeonItem);
+        
+        recetas.push(new receta(nombreReceta, ingredientesReceta, stepsReceta));
+        let recetaActual = recetas[recetas.length - 1];
     
- }
+      const acordeonRecetasAleatorio = document.getElementById("acordeonRecetasAleatorio");
+      acordeonRecetasAleatorio.innerHTML = "";
+        
+            let x = recetaActual;  //Cambiar por el input
+            let nuevoAcordeonItem = document.createElement("div");
+            nuevoAcordeonItem.className = "accordion-item";
+    
+            let h2 = document.createElement("h2");
+            h2.className = "accordion-header";
+            let idNum = Math.floor(Math.random() * 10000) + 1;
+            idNum = idNum.toString();
+            h2.id = "headingfour";
+    
+            let button = document.createElement("button");
+            button.className = "accordion-button collapsed";
+            button.type = "button";
+            button.setAttribute("data-bs-toggle", "collapse");
+            button.setAttribute("data-bs-target", "#collapseThrees"+idNum);
+            button.setAttribute("aria-expanded", "false");
+            button.setAttribute("aria-controls", "collapseThrees"+idNum);
+            button.textContent = x.nota;
+    
+            h2.appendChild(button);
+            nuevoAcordeonItem.appendChild(h2);
+    
+            let collapse = document.createElement("div");
+            collapse.className = "accordion-collapse collapse";
+            collapse.id = "collapseThrees"+idNum;
+            collapse.setAttribute("aria-labelledby", "headingfour");
+            collapse.setAttribute("data-bs-parent", "#acordeonRecetasAleatorio");
+    
+            let body = document.createElement("div");
+            body.className = "accordion-body";
+    
+            let contenedorReceta = document.createElement("div");
+            contenedorReceta.className = "contenedorReceta";
+    
+            let contenedorIngredientes = document.createElement("div");
+            contenedorIngredientes.className = "contenedor__ingredientes";
+            contenedorIngredientes.textContent = x.ingredientes.join(", ");
+    
+            let listaPasos = document.createElement("ol");
+            listaPasos.className = "contenedor__pasos";
+    
+            x.pasos.forEach(element => {
+                let paso = document.createElement("li");
+                paso.textContent = element;
+                listaPasos.appendChild(paso);
+            });
+    
+            contenedorReceta.appendChild(contenedorIngredientes);
+            contenedorReceta.appendChild(listaPasos);
+    
+            body.appendChild(contenedorReceta);
+            collapse.appendChild(body);
+            nuevoAcordeonItem.appendChild(collapse);
+             
+             acordeonRecetasAleatorio.appendChild(nuevoAcordeonItem);
+    }
+    catch(error) {
+      console.error('Error:', error);
+    
+      
+   }
+  });
   
+}
 
  function guardarRecetasPrincipa(){
+  
   btnGuardarRecetaPrincipal.addEventListener("click", function(){
     let input =inputTextoRecetaASolicitar.value;
 
