@@ -52,50 +52,11 @@
 
               <div class="btnChatRapido">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalChatRapido">
+                <button type="button" class="btn btn-primary" id="btnGuardarRecetaSencilla" >
                   Receta Sencilla
                 </button>
     
-                <!-- Modal -->
-                <div class="modal fade " id="modalChatRapido" tabindex="-1" aria-labelledby="modalChatRapidoLabel" aria-hidden="true">
-                  <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title" id="modalChatRapidoLabel">Arma tu receta</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                      </div>
-                      <div class="modal-body">
-                        <select class="form-select form-select-lg mb-3" aria-label="Large select example" id="chatRapidoTipoProteina">
-                          <option selected hidden disabled>Que proteína quieres?</option>
-                          <option value="Carne">Carne</option>
-                          <option value="Pescado">Pescado</option>
-                          <option value="Pollo">Pollo</option>
-                          <option value="Vegetal">Vegetal</option>
-                      
-                        </select>
-                        <div >
-                          <label for="chatRapidoTipoComida" class="form-label">Que tipo de comida quieres?</label>
-                          <input type="text" class="form-control" id="chatRapidoTipoComida" placeholder="Cualquiera">
-                        </div>
-
-                        <div class="row mb-3">
-                          <div class="col-3">
-                            <label for="chatRapidoCantidadPersonas" class="form-label text-center">Para cuantas personas?</label>
-                            <input type="number" class="form-control" id="chatRapidoCantidadPersonas" placeholder="3">
-                          </div>
-                          <div class="col-9 text-center d-flex flex-column justify-content-center">
-                            <label for="chatRapidoPicor_Dulsura" class="form-label" id="textoChatRapidoPicor_Dulsura">Neutro (ni muy picante ni muy dulce)</label>
-                            <input type="range" class="form-range" id="chatRapidoPicor_Dulsura" min="0" max="6" value="3">
-                          </div>
-                        </div>
-                      </div>
-                      <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary btn--slim" data-bs-dismiss="modal">Cerrar</button>
-                        <button type="button" class="btn btn-primary btn--slim" id="btnGuardarRecetaSencilla">Guardar Receta</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+       
               </div> 
 
               <div class="btnChatPrincipal">

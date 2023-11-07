@@ -24,36 +24,15 @@ document.addEventListener('DOMContentLoaded', function(){
  function modalRecetaRapida(){
   // tomar todos los datos y convertirlos en str
   btnGuardarRecetaSencilla.addEventListener("click", function(){
-    let cadenaReceta = "";
-    let proteina =chatRapidoTipoProteina.value;
-    let tipo =chatRapidoTipoComida.value;
-    let cantidad =chatRapidoCantidadPersonas.value;
-    let picorDulsura =listachatRapidoPicor_Dulsura[chatRapidoPicor_Dulsura.value];
-
-    if (proteina == "Que proteína quieres?"){
-      proteina = "carne"; 
-    }
-    if (tipo == ""){
-      tipo = "cualquiera"; 
-    }
-    if (cantidad == ""){
-      cantidad = "3"; 
-    }
-
-    cadenaReceta = "La proteina de la receta sera " +proteina+ " el tipo de la comida es " + tipo + " las porciones son para " + cantidad + " personas y debe ser " + picorDulsura;
-    
-  });
-
-  // actualizar range 
-  chatRapidoPicor_Dulsura.addEventListener("input", function(){
-    textoChatRapidoPicor_Dulsura.textContent = listachatRapidoPicor_Dulsura[chatRapidoPicor_Dulsura.value];
-    
+    conseguirRecetaChatGpt("pay de oreo");
   });
 
 
   
  }
  function modalRecetaAleatoria(){
+
+
   const acordeonRecetasAleatorio = document.getElementById("acordeonRecetasAleatorio");
   acordeonRecetasAleatorio.innerHTML = "";
     
@@ -119,10 +98,12 @@ document.addEventListener('DOMContentLoaded', function(){
  function guardarRecetasPrincipa(){
   btnGuardarRecetaPrincipal.addEventListener("click", function(){
     let input =inputTextoRecetaASolicitar.value;
-    input = input.split("?");
-    let nombreReceta = input[0];
-    let ingredientesReceta = input[1];
-    let stepsReceta = input[2];
+
+    let recetaPorChatGpt = conseguirRecetaChatGpt(input);
+    recetaPorChatGpt = recetaPorChatGpt.split("?");
+    let nombreReceta = recetaPorChatGpt[0];
+    let ingredientesReceta = recetaPorChatGpt[1];
+    let stepsReceta = recetaPorChatGpt[2];
     // separar cadenas
     ingredientesReceta = ingredientesReceta.split("&");
     stepsReceta = stepsReceta.split("&");
