@@ -17,9 +17,39 @@ document.addEventListener('DOMContentLoaded', function(){
     modalRecetaAleatoria();
     modalRecetaRapida();
     guardarRecetasPrincipa();
-
+    
 
  }
+ function activarReconocimientoVoz() {
+  const inputTextoRecetaASolicitar = document.getElementById('inputTextoRecetaASolicitar');
+  
+  // Verifica si el navegador es compatible con la API de reconocimiento de voz
+  if ('webkitSpeechRecognition' in window) {
+    const reconocimientoVoz = new webkitSpeechRecognition();
+    
+    // Configura el idioma del reconocimiento de voz (puedes cambiarlo según tus necesidades)
+    reconocimientoVoz.lang = 'es-ES';
+    
+    // Evento que se dispara cuando se detecta voz
+    reconocimientoVoz.onresult = function(event) {
+      const resultado = event.results[0][0].transcript;
+      
+      // Establece el resultado como valor del campo de entrada
+      inputTextoRecetaASolicitar.value = resultado;
+    };
+
+    // Inicia el reconocimiento de voz al llamar a la función start
+    reconocimientoVoz.start();
+    
+    // Evento que se dispara cuando el reconocimiento de voz se detiene
+    reconocimientoVoz.onend = function() {
+      console.log('Reconocimiento de voz detenido.');
+    };
+  } else {
+    // Muestra un mensaje si el navegador no es compatible con el reconocimiento de voz
+    alert('El reconocimiento de voz no es compatible con este navegador.');
+  }
+}
 
  function modalRecetaRapida(){
   // tomar todos los datos y convertirlos en str
